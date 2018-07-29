@@ -1,0 +1,51 @@
+[
+   {
+       "name": "Pasticceria Bompiani",
+       "type": "bakery",
+       "latitude": 41.8589048,
+       "longitude": 12.5000115,
+       "streetAddress": "Via Benedetto Bompiani, 8, 00147 Roma RM"
+   },
+   {
+       "name": "Cristalli di Zucchero",
+       "type": "bakery",
+       "latitude": 41.8693392,
+       "longitude": 12.4445085,
+       "streetAddress": "Via di Val Tellina, 114, 00151 Roma RM"
+   },
+   {
+       "name": "Casa Manfredi",
+       "type": "bakery",
+       "latitude": 41.8809509,
+       "longitude": 12.4829279,
+       "streetAddress": "Viale Aventino, 91/93, 00153 Roma RM"
+   },
+   {
+       "name": "Andrea De Bellis",
+       "type": "bakery",
+       "latitude": 41.895964,
+       "longitude": 12.471644,
+       "streetAddress": "Piazza del Paradiso, 56/57, 00186 Roma RM"
+   },
+   {
+       "name": "Pasticceria Gruè",
+       "type": "bakery",
+       "latitude": 41.9174239,
+       "longitude": 12.4991515,
+       "streetAddress": "Viale Regina Margherita, 95, 00198 Roma RM"
+   },
+   {
+       "name": "Le Levain",
+       "type": "bakery",
+       "latitude": 41.887206,
+       "longitude": 12.4665683,
+       "streetAddress": "Via Luigi Santini, 22, 00153 Roma RM"
+   },
+   {
+       "name": "Regoli Pasticceria",
+       "type": "bakery",
+       "latitude": 41.894823,
+       "longitude": 12.4987548,
+       "streetAddress": "Via dello Statuto, 60, 00185 Roma RM"
+   }
+]
