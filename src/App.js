@@ -4,13 +4,15 @@ import Menu from './components/Menu'
 import * as MapsApiUtilities from './MapsApiUtilities'
 
 class App extends React.Component {
+
   /**
    * Constructor
    */
   constructor(props) {
     super(props);
     this.state = {
-      places: require("./places.json"),
+      allPlaces: require("./places.json"),
+      places:[],
       map: "",
       infowindow: "",
       currentMarker: ""
@@ -58,7 +60,7 @@ class App extends React.Component {
     });
 
     var places = [];
-    this.state.places.forEach(function(location) {
+    this.state.allPlaces.forEach(function(location) {
       var longname = location.name + " - " + location.type;
       var marker = new window.google.maps.Marker({
         position: new window.google.maps.LatLng(
@@ -86,6 +88,13 @@ class App extends React.Component {
       places: places
     });
 
+  }
+  /**
+   * Updates the places state
+   * @param {array} places
+   */
+  updatePlacesToShow(places){
+    this.setState({places:places});
   }
 
   /**
@@ -140,7 +149,8 @@ class App extends React.Component {
             <Menu menuStatus = { true }
                   title = { 'Best pastry shops in Rome'}
                   places = { this.state.places }
-                  openInfo = { this.openInfoWindow} />
+                  openInfo = { this.openInfoWindow}
+                  updatePlaces = {this.updatePlacesToShow}/>
             <div id="map"></div>
         </div>
     );

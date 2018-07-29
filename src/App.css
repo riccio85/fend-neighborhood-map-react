@@ -159,3 +159,8 @@ li a {
   width: 100%;
   height: 30px;
 }
+
+/*accesibility classes*/
+.visuallyhidden{
+  display: none;
+}

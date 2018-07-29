@@ -23,15 +23,21 @@ class Menu extends React.Component {
     return (
     <div ref="root">
           <div className="menubar">
-            <div className="menu-icon" onClick={ this.menuToggle }></div>
-            <div id="hambmenu" className={ menuStatus }>
+            <div className="menu-icon" onClick={ this.menuToggle } tabIndex="0" ></div>
+            <div id="hambmenu" className={ menuStatus } >
                 <span></span> <span></span> <span></span> <span></span>
             </div>
+
             <div className="title">
               <span>{ this.props.title }</span>
             </div>
           </div>
-          <ListView menuStatus={ menuStatus } places={ this.props.places }    openInfo = { this.props.openInfo}/>
+          <ListView menuStatus={ menuStatus }
+            places={ this.props.places }
+            openInfo = { this.props.openInfo}
+            updatePlaces = {this.props.updatePlaces}/>
+
+            />
         </div>
     )
   }

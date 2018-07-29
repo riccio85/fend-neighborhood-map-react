@@ -19,6 +19,10 @@ class ListView extends React.Component {
     this.props.openInfo(marker)
   }
 
+  updateMarkers =(places) => {
+    this.props.updatePlaces(places)
+  }
+
   render() {
 
     const { query } = this.state
@@ -28,13 +32,15 @@ class ListView extends React.Component {
     if(query){
       const match = new RegExp((this.state.query),'i')
       showingPlaces = this.props.places.filter((place)=> match.test(place.name))
+      this.updateMarkers(showingPlaces)
     } else {
       showingPlaces = this.props.places
     }
 
     return (
         <div className={this.props.menuStatus} id='menu'>
-            <ul>
+            <ul aria-labelledby="mainmenulabel">
+              <span id="mainmenulabel" className="visuallyhidden">Places list</span>
                <li>
                   <input type="text" placeholder="filter"
                     value={query}
