@@ -16,14 +16,9 @@ export const loadMapScript = () => {
     ref.parentNode.insertBefore(script, ref);
 }
 
-/**
- * Retrive the location data from the foursquare api
- */
-
- // Add the api keys for foursquare
  const foursquareClientId = "DOMO5PTUBPLCTFIPF210EDB5KXIHJTGHBEIQJOCJTN5KRDWI";
  const foursquareSecret = "SC25BEFM21RMYT15UDPD23XNAWOIAPGOR440YRED1LZHKXMH";
- const getFoursquareUrl = (lat,lng)=>{
+ const getFoursquareUrl = (lat,lng)=> {
      return "https://api.foursquare.com/v2/venues/search?client_id=" +
      foursquareClientId +
      "&client_secret=" +
@@ -32,39 +27,30 @@ export const loadMapScript = () => {
      lat +  "," + lng +  "&limit=1";
  }
 
+ /**
+  * Retrive the location data from the foursquare api
+  */
 export const getMarkerFoursquareInfo = (marker) => {
   const self = this;
   // Build the Foursquare api endpoint
   const url = getFoursquareUrl(marker.getPosition().lat(),marker.getPosition().lng());
+  return fetch(url);
+}
 
-  fetch(url).then(response => {
-    if (response.status !== 200) {
-      return Promise.reject(Error('error'));
-    }
-    // Get the response data
-    response.json().then(function(data) {
-        console.log(data);
-        var location_data = data.response.venues[0];
-        var place = `<h3>${location_data.name}</h3>`;
-        var street = `<p>${location_data.location.formattedAddress[0]}</p>`;
-        var contact = "";
-        if (location_data.contact.phone)
-          contact = `<p><small>${location_data.contact.phone}</small></p>`;
-        var checkinsCount =
-          "<b>Number of CheckIn: </b>" +
-          location_data.stats.checkinsCount +
-          "<br>";
-        var readMore =
-          '<a href="https://foursquare.com/v/' +
-          location_data.id +
-          '" target="_blank">Read More on <b>Foursquare Website</b></a>';
-          return Promise.resolve(
-            place + street + contact + checkinsCount + readMore
-          );
-
-    });
-    return Promise.reject(Error('error'))
-  }).catch(error => {
-    return Promise.reject(Error(error.message))
-  })
+const getFoursquareFormattedData = (data){
+  var location_data = data.response.venues[0];
+  var place = `<h3>${location_data.name}</h3>`;
+  var street = `<p>${location_data.location.formattedAddress[0]}</p>`;
+  var contact = "";
+  if (location_data.contact.phone)
+    contact = `<p><small>${location_data.contact.phone}</small></p>`;
+  var checkinsCount =
+    "<b>Number of CheckIn: </b>" +
+    location_data.stats.checkinsCount +
+    "<br>";
+  var readMore =
+    '<a href="https://foursquare.com/v/' +
+    location_data.id +
+    '" target="_blank">Read More on <b>Foursquare Website</b></a>';
+    return place + street + contact + checkinsCount + readMore;
 }

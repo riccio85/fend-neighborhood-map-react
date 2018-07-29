@@ -8,6 +8,7 @@ class App extends React.Component {
    * Constructor
    */
   constructor(props) {
+     lat +  "," + lng +  "&limit=1";
     super(props);
     this.state = {
       places: require("./places.json"),
@@ -90,22 +91,27 @@ class App extends React.Component {
 
   /**
    * Open the infowindow for the marker
-   * @param {object} location marker
+   * @param {object} marker
    */
   openInfoWindow(marker) {
     this.closeInfoWindow();
     this.state.infowindow.open(this.state.map, marker);
     marker.setAnimation(window.google.maps.Animation.BOUNCE);
-    this.setState({
-      currentMarker: marker
-    });
+    this.setState({ currentMarker: marker });
     this.state.infowindow.setContent("Loading Data...");
     this.state.map.setCenter(marker.getPosition());
     this.state.map.panBy(0, -200);
-    //this.getMarkerInfo(marker);
     MapsApiUtilities.getMarkerFoursquareInfo(marker).then(
-      (data) => {
-        this.state.infowindow.setContent(data);
+      (response) => {
+        if(response.status !== 200 ){
+            this.state.infowindow.setContent("Sorry data can't be loaded");
+        }
+        response.json().then(
+          (data)=>{
+              let formattedData = MapsApiUtilities.getFoursquareFormattedData(data)
+              this.state.infowindow.setContent(formattedData);
+           }
+        )
       }, (error) => {
         this.state.infowindow.setContent("Sorry data can't be loaded");
       }
@@ -113,7 +119,7 @@ class App extends React.Component {
   }
 
   /**
-   * Close the info window previously opened
+   * Close opened info window
    */
   closeInfoWindow() {
     if (this.state.currentMarker) {
