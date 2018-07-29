@@ -8,7 +8,6 @@ class App extends React.Component {
    * Constructor
    */
   constructor(props) {
-     lat +  "," + lng +  "&limit=1";
     super(props);
     this.state = {
       places: require("./places.json"),
@@ -131,6 +130,7 @@ class App extends React.Component {
     this.state.infowindow.close();
   }
 
+
   /**
    * Render for react
    */
@@ -139,7 +139,8 @@ class App extends React.Component {
         <div>
             <Menu menuStatus = { true }
                   title = { 'Best pastry shops in Rome'}
-                  places = { this.state.places }/>
+                  places = { this.state.places }
+                  openInfo = { this.openInfoWindow} />
             <div id="map"></div>
         </div>
     );

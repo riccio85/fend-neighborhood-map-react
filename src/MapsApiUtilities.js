@@ -18,7 +18,7 @@ export const loadMapScript = () => {
 
  const foursquareClientId = "DOMO5PTUBPLCTFIPF210EDB5KXIHJTGHBEIQJOCJTN5KRDWI";
  const foursquareSecret = "SC25BEFM21RMYT15UDPD23XNAWOIAPGOR440YRED1LZHKXMH";
- const getFoursquareUrl = (lat,lng)=> {
+ const getFoursquareUrl = (lat,lng) => {
      return "https://api.foursquare.com/v2/venues/search?client_id=" +
      foursquareClientId +
      "&client_secret=" +
@@ -37,7 +37,8 @@ export const getMarkerFoursquareInfo = (marker) => {
   return fetch(url);
 }
 
-const getFoursquareFormattedData = (data){
+export const getFoursquareFormattedData = (data) => {
+  console.log(data);
   var location_data = data.response.venues[0];
   var place = `<h3>${location_data.name}</h3>`;
   var street = `<p>${location_data.location.formattedAddress[0]}</p>`;
