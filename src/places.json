@@ -9,22 +9,22 @@
    {
        "name": "Pasticceria Bompiani",
        "type": "Pastry Shop",
-       "latitude": 41.8589048,
-       "longitude": 12.5000115,
+       "latitude": 41.8591079, 
+       "longitude": 12.5022925,
        "streetAddress": "Via Benedetto Bompiani, 8, 00147 Roma RM"
    },
    {
        "name": "Cristalli di Zucchero",
        "type": "Pastry Shop",
-       "latitude": 41.8693392,
-       "longitude": 12.4445085,
+       "latitude": 41.8693226, 
+       "longitude": 12.4466139,
        "streetAddress": "Via di Val Tellina, 114, 00151 Roma RM"
    },
    {
        "name": "Casa Manfredi",
        "type": "Pastry Shop",
-       "latitude": 41.8809509,
-       "longitude": 12.4829279,
+       "latitude": 41.881162,
+       "longitude": 12.484784,
        "streetAddress": "Viale Aventino, 91/93, 00153 Roma RM"
    },
    {
@@ -35,24 +35,40 @@
        "streetAddress": "Piazza del Paradiso, 56/57, 00186 Roma RM"
    },
    {
-       "name": "Pasticceria Gruè",
-       "type": "Pastry Shop",
-       "latitude": 41.9174239,
-       "longitude": 12.4991515,
-       "streetAddress": "Viale Regina Margherita, 95, 00198 Roma RM"
-   },
-   {
        "name": "Le Levain",
        "type": "Pastry Shop",
-       "latitude": 41.887206,
-       "longitude": 12.4665683,
+       "latitude": 41.8871036,
+       "longitude": 12.4687418,
        "streetAddress": "Via Luigi Santini, 22, 00153 Roma RM"
    },
    {
        "name": "Regoli Pasticceria",
        "type": "Pastry Shop",
-       "latitude": 41.894823,
-       "longitude": 12.4987548,
+       "latitude": 41.8951025, 
+       "longitude": 12.4987038,
        "streetAddress": "Via dello Statuto, 60, 00185 Roma RM"
+   },
+    {
+       "name": "Antica Pasticceria Faggiani",
+       "type": "Pastry Shop",
+       "latitude": 41.9141922,  
+       "longitude": 12.4620649,
+       "streetAddress": "Via Giuseppe Ferrari, 23, 00195 Roma RM"
    }
+   ,{
+       "name": "Pasticceria Cinque Lune",
+       "type": "Pastry Shop",
+       "latitude": 41.8995866,
+       "longitude": 12.4716013,
+       "streetAddress": "Corso del Rinascimento, 89, 00186 Roma RM"
+   }
+    ,{
+       "name": "Pasticceria Lotti",
+       "type": "Pastry Shop",
+       "latitude": 41.9091452,
+       "longitude": 12.4193243,
+       "streetAddress": "Via Sardegna, 14, 00187 Roma RM"
+   }
+
+   
 ]
