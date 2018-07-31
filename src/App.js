@@ -20,6 +20,7 @@ class App extends React.Component {
     this.initMap = this.initMap.bind(this);
     this.openInfoWindow = this.openInfoWindow.bind(this);
     this.closeInfoWindow = this.closeInfoWindow.bind(this);
+    this.updatePlacesToShow = this.updatePlacesToShow.bind(this);
   }
 
   componentDidMount() {
@@ -40,6 +41,7 @@ class App extends React.Component {
     var map = new window.google.maps.Map(mapview, {
       center: { lat:41.8922736, lng:12.4852753 },
       zoom: 13,
+      styles: MapsApiUtilities.mapCustomStyle,
       mapTypeControl: false
     });
 
@@ -59,6 +61,14 @@ class App extends React.Component {
       self.closeInfoWindow();
     });
 
+    /* var goldCake = {
+          path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
+          fillColor: 'yellow',
+          fillOpacity: 0.8,
+          scale: 1,
+          strokeColor: 'gold',
+          strokeWeight: 12
+    };*/
     var places = [];
     this.state.allPlaces.forEach(function(location) {
       var longname = location.name + " - " + location.type;
@@ -68,6 +78,7 @@ class App extends React.Component {
           location.longitude
         ),
         animation: window.google.maps.Animation.DROP,
+        //icon: goldCake,
         map: map
       });
 
@@ -80,6 +91,10 @@ class App extends React.Component {
       location.display = true;
       places.push(location);
 
+
+
+         
+
     });
 
     this.setState({
@@ -90,11 +105,18 @@ class App extends React.Component {
 
   }
   /**
-   * Updates the places state
+   * Updates the places markers to show on the map
    * @param {array} places
    */
-  updatePlacesToShow(places){
-    this.setState({places:places});
+  updatePlacesToShow(placesToShow){
+    let placesNames = Object.keys(placesToShow).map(f=>placesToShow[f].name)
+    this.state.places.forEach( (el) => {
+      if(placesNames.indexOf(el.name) > -1) {
+        el.marker.setVisible(true)
+      } else {
+        el.marker.setVisible(false)
+      }
+    })
   }
 
   /**
