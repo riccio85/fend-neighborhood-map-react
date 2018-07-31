@@ -35,11 +35,12 @@ class ListView extends React.Component {
       this.updateMarkers(showingPlaces)
     } else {
       showingPlaces = this.props.places
+      this.updateMarkers(showingPlaces)
     }
 
     return (
         <div className={this.props.menuStatus} id='menu'>
-            <ul aria-labelledby="mainmenulabel">
+            <ul aria-labelledby="mainmenulabel" tabIndex="0" >
               <span id="mainmenulabel" className="visuallyhidden">Places list</span>
                <li>
                   <input type="text" placeholder="filter"
@@ -49,7 +50,7 @@ class ListView extends React.Component {
                </li>
                {
                    showingPlaces.map((place,i) =>
-                     <li key={i} onClick={ () => this.handleClick(place.marker)}>
+                     <li key={i} onClick={ () => this.handleClick(place.marker)} tabIndex="0">
                        <span>{place.name}</span>
                      </li>
                    )

@@ -61,14 +61,6 @@ class App extends React.Component {
       self.closeInfoWindow();
     });
 
-    /* var goldCake = {
-          path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
-          fillColor: 'yellow',
-          fillOpacity: 0.8,
-          scale: 1,
-          strokeColor: 'gold',
-          strokeWeight: 12
-    };*/
     var places = [];
     this.state.allPlaces.forEach(function(location) {
       var longname = location.name + " - " + location.type;
@@ -78,7 +70,6 @@ class App extends React.Component {
           location.longitude
         ),
         animation: window.google.maps.Animation.DROP,
-        //icon: goldCake,
         map: map
       });
 
@@ -90,11 +81,6 @@ class App extends React.Component {
       location.marker = marker;
       location.display = true;
       places.push(location);
-
-
-
-         
-
     });
 
     this.setState({
@@ -109,7 +95,8 @@ class App extends React.Component {
    * @param {array} places
    */
   updatePlacesToShow(placesToShow){
-    let placesNames = Object.keys(placesToShow).map(f=>placesToShow[f].name)
+    let placesNames = placesToShow.map((el,i)=> placesToShow[i].name)
+    //show only filtered markers
     this.state.places.forEach( (el) => {
       if(placesNames.indexOf(el.name) > -1) {
         el.marker.setVisible(true)
@@ -117,6 +104,7 @@ class App extends React.Component {
         el.marker.setVisible(false)
       }
     })
+
   }
 
   /**
@@ -158,7 +146,7 @@ class App extends React.Component {
     this.setState({
       currentMarker: ""
     });
-    this.state.infowindow.close();
+    this.state.infowindow.close()
   }
 
 

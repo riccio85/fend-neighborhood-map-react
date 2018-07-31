@@ -36,7 +36,6 @@ class Menu extends React.Component {
             places={ this.props.places }
             openInfo = { this.props.openInfo}
             updatePlaces = {this.props.updatePlaces}/>
-
             />
         </div>
     )
