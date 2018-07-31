@@ -88,8 +88,9 @@ class App extends React.Component {
       infowindow: InfoWindow,
       places: places
     });
-
+    
   }
+
   /**
    * Updates the places markers to show on the map
    * @param {array} places
@@ -148,7 +149,6 @@ class App extends React.Component {
     });
     this.state.infowindow.close()
   }
-
 
   /**
    * Render for react

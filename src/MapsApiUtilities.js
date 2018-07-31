@@ -38,7 +38,6 @@ export const getMarkerFoursquareInfo = (marker) => {
 }
 
 export const getFoursquareFormattedData = (data) => {
-  console.log(data);
   var location_data = data.response.venues[0];
   var place = `<h3>${location_data.name}</h3>`;
   var street = `<p>${location_data.location.formattedAddress[0]}</p>`;
