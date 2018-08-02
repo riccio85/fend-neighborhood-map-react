@@ -3,7 +3,7 @@
 This project is part of the udacity Fronte-end nanodegree project.
 
 ## Project Overview
-This is a single page application featuring a neighborhood Rome(Italy) map. In the map you can see the highlighted locations.
+This is a single page application featuring my best pastry shops in Rome. In the map you can see the highlighted locations.
 
 
 
@@ -34,4 +34,4 @@ In this case the site will be hosted at http://localhost:5000
 
 
 # Enjoy
-https://stackoverflow.com/questions/27915193/how-to-cache-apis-like-google-maps-while-using-service-workers#27922950
+

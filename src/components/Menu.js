@@ -23,7 +23,7 @@ class Menu extends React.Component {
     return (
     <div ref="root">
           <div className="menubar">
-            <div className="menu-icon" onClick={ this.menuToggle } ></div>
+            <div role="button" tabindex="0" className="menu-icon" onClick={ this.menuToggle }  onKeyPress={ this.menuToggle } ></div>  
             <div id="hambmenu" className={ menuStatus } >
                 <span></span> <span></span> <span></span> <span></span>
             </div>

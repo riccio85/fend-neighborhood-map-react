@@ -117,6 +117,8 @@ body {
   transition: -webkit-transform 300ms;
   transition: transform 300ms;
   transition: transform 300ms, -webkit-transform 300ms;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #menu ul {

@@ -40,7 +40,7 @@ class ListView extends React.Component {
 
     return (
         <div className={this.props.menuStatus} id='menu'>
-            <ul aria-labelledby="mainmenulabel" tabIndex="0" >
+            <ul  role="menu" aria-labelledby="mainmenulabel" >
               <span id="mainmenulabel" className="visuallyhidden">Places list</span>
                <li>
                   <input type="text" placeholder="filter"
@@ -50,8 +50,8 @@ class ListView extends React.Component {
                </li>
                {
                    showingPlaces.map((place,i) =>
-                     <li key={i} onClick={ () => this.handleClick(place.marker)} tabIndex="0">
-                       <span>{place.name}</span>
+                     <li key={i}  role="none" onClick={ () => this.handleClick(place.marker)} onKeyPress={ () => this.handleClick(place.marker)}  tabIndex="0">
+                       <span role="menuitem">{place.name}</span>
                      </li>
                    )
                }
