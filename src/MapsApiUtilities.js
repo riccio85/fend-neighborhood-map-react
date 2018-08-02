@@ -31,8 +31,6 @@ export const loadMapScript = () => {
   * Retrive the location data from the foursquare api
   */
 export const getMarkerFoursquareInfo = (marker) => {
-  const self = this;
-  // Build the Foursquare api endpoint
   const url = getFoursquareUrl(marker.getPosition().lat(),marker.getPosition().lng());
   return fetch(url);
 }

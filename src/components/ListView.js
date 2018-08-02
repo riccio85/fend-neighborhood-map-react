@@ -1,5 +1,4 @@
 import React from 'react'
-import escapeRegExp from 'escape-string-regexp'
 
 class ListView extends React.Component {
 
