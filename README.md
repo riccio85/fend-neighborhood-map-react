@@ -18,6 +18,7 @@ This is a single page application featuring my best pastry shops in Rome. In the
 * you should have the application lunched on localhost:3000 start the App
 
 ## To run the App in production mode:
+This mode includes a Service Worker. To run it:
 `npm run build`
 Then you can use Node serve. If you do not have it installed you can install it with:
 `npm install -g serve`
@@ -27,7 +28,7 @@ In this case the site will be hosted at http://localhost:5000
 
 ## Features
 
-1. Click on any marker to see the location info window fetched from the FourSquare APIs.
+1. Click on any marker to see the location info window fetched from the [FourSquare APIs](https://it.foursquare.com/).
 2. Click on the read more on the info window, that will help a new page with more info about the location
 2. Filter by name on the locations
 3. Get information on locations from the search or through marker click
