@@ -26,7 +26,8 @@ class App extends React.Component {
   componentDidMount() {
     // Add the initMap in a global context so Google Maps can invoke it
     window.initMap = this.initMap;
-    // Load the Google Maps Asynchronously
+    window.gm_authFailure = MapsApiUtilities.gm_authFailure;
+    // Load the Google Maps Asynchronously .catch(loadScript.bind(null, localSource))
     MapsApiUtilities.loadMapScript();
   }
 
@@ -88,7 +89,7 @@ class App extends React.Component {
       infowindow: InfoWindow,
       places: places
     });
-    
+
   }
 
   /**
@@ -122,15 +123,16 @@ class App extends React.Component {
     this.state.map.panBy(0, -200);
     MapsApiUtilities.getMarkerFoursquareInfo(marker).then(
       (response) => {
-        if(response.status !== 200 ){
-            this.state.infowindow.setContent("Sorry data can't be loaded");
+        if(response.status === 200 ){
+          response.json().then(
+            (data)=>{
+                let formattedData = MapsApiUtilities.getFoursquareFormattedData(data);
+                this.state.infowindow.setContent(formattedData);
+             }
+          )
+        } else {
+          this.state.infowindow.setContent("Sorry data can't be loaded");
         }
-        response.json().then(
-          (data)=>{
-              let formattedData = MapsApiUtilities.getFoursquareFormattedData(data)
-              this.state.infowindow.setContent(formattedData);
-           }
-        )
       }, (error) => {
         this.state.infowindow.setContent("Sorry data can't be loaded");
       }

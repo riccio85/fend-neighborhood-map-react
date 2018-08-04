@@ -9,14 +9,14 @@
    {
        "name": "Pasticceria Bompiani",
        "type": "Pastry Shop",
-       "latitude": 41.8591079, 
+       "latitude": 41.8591079,
        "longitude": 12.5022925,
        "streetAddress": "Via Benedetto Bompiani, 8, 00147 Roma RM"
    },
    {
        "name": "Cristalli di Zucchero",
        "type": "Pastry Shop",
-       "latitude": 41.8693226, 
+       "latitude": 41.8693226,
        "longitude": 12.4466139,
        "streetAddress": "Via di Val Tellina, 114, 00151 Roma RM"
    },
@@ -44,14 +44,14 @@
    {
        "name": "Regoli Pasticceria",
        "type": "Pastry Shop",
-       "latitude": 41.8951025, 
+       "latitude": 41.8951025,
        "longitude": 12.4987038,
        "streetAddress": "Via dello Statuto, 60, 00185 Roma RM"
    },
     {
        "name": "Antica Pasticceria Faggiani",
        "type": "Pastry Shop",
-       "latitude": 41.9141922,  
+       "latitude": 41.9141922,
        "longitude": 12.4620649,
        "streetAddress": "Via Giuseppe Ferrari, 23, 00195 Roma RM"
    }
@@ -70,5 +70,5 @@
        "streetAddress": "Via Sardegna, 14, 00187 Roma RM"
    }
 
-   
+
 ]

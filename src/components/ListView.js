@@ -5,19 +5,22 @@ class ListView extends React.Component {
   state = {
     query:''
   }
-
+/*Updates the state when user inputs the search query */
   updateQuery = (query) => {
     this.setState({ query: query })
   }
 
+/*Clears the search query */
   clearQuery = () => {
     this.setState({ query: '' })
   }
 
+/* Opens the InfoWindow */
   handleClick = (marker) => {
     this.props.openInfo(marker)
   }
 
+/* Updates the markers to show on the page in parent component */
   updateMarkers =(places) => {
     this.props.updatePlaces(places)
   }
@@ -30,9 +33,11 @@ class ListView extends React.Component {
 
     if(query){
       const match = new RegExp((this.state.query),'i')
+      //filter the places/marker to show on the map based on user search input
       showingPlaces = this.props.places.filter((place)=> match.test(place.name))
       this.updateMarkers(showingPlaces)
     } else {
+      //if user didn't search then the map show all the places
       showingPlaces = this.props.places
       this.updateMarkers(showingPlaces)
     }
