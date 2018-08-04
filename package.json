@@ -2,16 +2,16 @@
   "name": "fend-neighborhood-map-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://riccio85.github.io/fend-neighborhood-map-react/",
+  "homepage":"https://riccio85.github.io/fend-neighborhood-map-react/",
   "dependencies": {
     "escape-string-regexp": "^1.0.5",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
+    "react-scripts": "1.1.4",
     "react-dom": "^16.3.2"
   },
   "devDependencies": {
-    "gh-pages": "^1.2.0",
-    "react-scripts": "1.1.4"
+    "gh-pages": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
