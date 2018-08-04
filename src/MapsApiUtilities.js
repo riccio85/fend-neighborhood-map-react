@@ -1,6 +1,4 @@
-const API_KEY = 'AIzaSyAbL0dY0t-tlW7Ed7u-fWxU6Y1e44dqINE';
-// const API_KEY = 'AIzaSyAnVk1yQzOQbKeSAExms-eu2q_6y2xsK00';
-// const API_KEY = 'AIzaSyDg50YGxoN5anPMJonBT-td-YfXfM9v6-A'; //kefzyk key
+const API_KEY = 'AIzaSyAnVk1yQzOQbKeSAExms-eu2q_6y2xsK00';
 const googleMapsSrc = 'https://maps.googleapis.com/maps/api/js?key='+API_KEY+'&callback=initMap';
 
 /**
