@@ -1,5 +1,5 @@
-// const API_KEY = 'AIzaSyDhua9elddeZjAnxA4j5ftB3QygPOU4CHQ';
-const API_KEY = 'AIzaSyAnVk1yQzOQbKeSAExms-eu2q_6y2xsK00';
+const API_KEY = 'AIzaSyAbL0dY0t-tlW7Ed7u-fWxU6Y1e44dqINE';
+// const API_KEY = 'AIzaSyAnVk1yQzOQbKeSAExms-eu2q_6y2xsK00';
 // const API_KEY = 'AIzaSyDg50YGxoN5anPMJonBT-td-YfXfM9v6-A'; //kefzyk key
 const googleMapsSrc = 'https://maps.googleapis.com/maps/api/js?key='+API_KEY+'&callback=initMap';
 
@@ -287,7 +287,6 @@ export const getMarkerFoursquareInfo = (marker) => {
   */
 export const getFoursquareFormattedData = (data) => {
   if(data.response && data.response.venues && data.response.venues[0]){
-    console.log(data.response.venues[0]);
         let location_data = data.response.venues[0];
         let place = `<h3>${location_data.name}</h3>`;
         let street = `<p>${location_data.location.formattedAddress[0]}</p>`;

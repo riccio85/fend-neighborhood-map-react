@@ -1,6 +1,6 @@
 # Neighborhood Maps React Project
 
-This project is part of the udacity Fronte-end nanodegree project.
+This project is part of the udacity Front-end nanodegree project.
 
 ## Project Overview
 This is a single page application featuring my best pastry shops in Rome. In the map you can see the highlighted locations.
@@ -22,8 +22,8 @@ This mode includes a Service Worker. To run it:
 `npm run build`
 Then you can use Node serve. If you do not have it installed you can install it with:
 `npm install -g serve`
-and then navigate into the build directory and run
-`serve -s`
+and then run
+`serve -s build`
 In this case the site will be hosted at http://localhost:5000
 
 ## Features
@@ -35,4 +35,3 @@ In this case the site will be hosted at http://localhost:5000
 
 
 # Enjoy
-
